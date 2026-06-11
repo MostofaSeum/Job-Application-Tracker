@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white ">
-      <main className="flex 1">
+      <main className="flex flex-col flex-1">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-32">
           <div className="mx-auto max-w-4xl text-center">
@@ -18,14 +18,46 @@ export default function Home() {
             </p>
             <div className="flex flex-col items-center gap-4">
               <Link href="/sign-up">
-              <Button size={"lg"} className="h-12 px-8 text-lg font-medium">
-                Start For Free
-                <ArrowRight className="ml-2 " />
-              </Button>
+                <Button size={"lg"} className="h-12 px-8 text-lg font-medium">
+                  Start For Free
+                  <ArrowRight className="ml-2 " />
+                </Button>
               </Link>
               <p className="text-sm text-muted-foreground">
                 Free forever, No credit card required
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Hero images with tabs */}
+        <section className="border-t bg-white py-16">
+          <div >
+            {/*Tabs*/}
+            <div>
+              <Button variant={"default"}>Organize Applications</Button>
+              <Button variant={"default"}>Get Hired</Button>
+              <Button variant={"default"}>Manage Boards</Button>
+            </div>
+            <div>
+              <Image
+                src="/hero-images/hero1.png"
+                alt={"hero-image"}
+                width={1200}
+                height={800}
+              ></Image>
+              <Image
+                src="/hero-images/hero2.png"
+                alt={"hero-image"}
+                width={1200}
+                height={800}
+              ></Image>
+              <Image
+                src="/hero-images/hero3.png"
+                alt={"hero-image"}
+                width={1200}
+                height={800}
+              ></Image>
             </div>
           </div>
         </section>
