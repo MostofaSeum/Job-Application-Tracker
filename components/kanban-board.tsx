@@ -21,7 +21,7 @@ import {
 import { Button } from "./ui/button";
 import CreateJobApplicationDialog from "./create-job-dialog";
 import JobApplicationCard from "./job-application-card";
-// import { useBoard } from "@/lib/hooks/useBoards";
+import { useBoard } from "@/lib/hooks/useBoard";
 // import {
 //   closestCorners,
 //   DndContext,
@@ -184,8 +184,7 @@ function DroppableColumn({
 
 export default function KanbanBoard({ board, userId }: KanbanBoardProps) {
   // const [activeId, setActiveId] = useState<string | null>(null);
-  // const { columns, moveJob } = useBoard(board);
-  const columns = (board as any).columns || [];
+  const { columns, moveJob } = useBoard(board);
 
   const sortedColumns = columns?.sort((a: any, b: any) => a.order - b.order) || [];
 
