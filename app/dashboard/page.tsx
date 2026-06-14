@@ -20,7 +20,6 @@ async function getBoard(userId: string) {
   });
 
   if (!boardDoc) return null;
-
   const board = JSON.parse(JSON.stringify(boardDoc));
 
   return board;

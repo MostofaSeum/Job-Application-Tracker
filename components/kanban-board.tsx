@@ -20,7 +20,7 @@ import {
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import CreateJobApplicationDialog from "./create-job-dialog";
-// import JobApplicationCard from "./job-application-card";
+import JobApplicationCard from "./job-application-card";
 // import { useBoard } from "@/lib/hooks/useBoards";
 // import {
 //   closestCorners,
@@ -130,20 +130,13 @@ function DroppableColumn({
         // ref={setNodeRef}
         className={`space-y-2 pt-4 bg-gray-50/50 min-h-[400px] rounded-b-lg`}
       >
-        {/*
-        <SortableContext
-          items={sortedJobs.map((job: any) => job._id)}
-          strategy={verticalListSortingStrategy}
-        >
-          {sortedJobs.map((job: any, key: number) => (
-            <SortableJobCard
-              key={key}
-              job={{ ...job, columnId: job.columnId || column._id }}
-              columns={sortedColumns}
-            />
-          ))}
-        </SortableContext>
-        */}
+        {sortedJobs.map((job: any, key: number) => (
+          <JobApplicationCard
+            key={key}
+            job={{ ...job, columnId: job.columnId || column._id }}
+            columns={sortedColumns}
+          />
+        ))}
 
         <CreateJobApplicationDialog columnId={column._id} boardId={boardId} />
       </CardContent>
